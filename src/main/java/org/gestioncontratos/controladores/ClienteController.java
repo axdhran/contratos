@@ -1,6 +1,7 @@
 package org.gestioncontratos.controladores;
 
 import org.gestioncontratos.modelos.Cliente;
+import org.gestioncontratos.servicios.interfaces.IClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -17,7 +18,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 @Controller
-@RequestMapping("/cliente")
+@RequestMapping("/clientes")
 public class ClienteController {
     @Autowired
     private IClienteService clienteService;
@@ -54,7 +55,7 @@ public class ClienteController {
             return "cliente/create";
         }
 
-        clienteService.crearOEditar(cliente);
+        clienteService.createOrEdit(cliente);
         attributes.addFlashAttribute("msg", "Cliente creado correctamente");
         return "redirect:/clientes";
     }
