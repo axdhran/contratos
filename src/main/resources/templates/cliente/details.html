@@ -1,0 +1,36 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout">
+
+<div layout:fragment="content">
+    <h1>Detalles del cliente</h1>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class = "col-sm-2" >ID</dt>
+            <dd class = "col-sm-10" th:text="${cliente.id}"></dd>
+
+            <dt class = "col-sm-2">Nombre</dt>
+            <dd class = "col-sm-10" th:text="${cliente.nombre}"></dd>
+
+            <dt class = "col-sm-2">Apellido</dt>
+            <dd class = "col-sm-10" th:text="${cliente.apellido}"></dd>
+
+            <dt class = "col-sm-2">DUI</dt>
+            <dd class = "col-sm-10" th:text="${cliente.dui}"></dd>
+
+            <dt class = "col-sm-2">Teléfono</dt>
+            <dd class = "col-sm-10" th:text="${cliente.telefono}"></dd>
+
+            <dt class = "col-sm-2">Escuela</dt>
+            <dd class = "col-sm-10" th:text="${cliente.direccion}"></dd>
+
+            <dt class = "col-sm-2">Email</dt>
+            <dd class = "col-sm-10" th:text="${cliente.email}"></dd>
+        </dl>
+
+        <a th:href="@{/clientes/edit/{id} (id = ${cliente.id}) }" class="btn btn-outline-info">Editar</a> |
+        <a th:href="@{/clientes}">Regresar</a>
+    </div>
+</div>

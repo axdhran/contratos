@@ -1,0 +1,62 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout">
+
+<div layout:fragment="content">
+    <h1>Editar docente</h1>
+    <form th:action="@{/clientes/save}" th:object="${cliente}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" placeholder="Escriba el nombre del cliente" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" class="form-control" th:field="*{apellido}" id="apellido" placeholder="Escriba el apellido del cliente" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="dui">Email</label>
+                    <input type="number" class="form-control" th:field="*{dui}" id="dui" placeholder="Escriba el dui del cliente" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" class="form-control" th:field="*{telefono}" id="telefono" placeholder="Escriba el teléfono del cliente" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="direccion">Direccion</label>
+                    <input type="text" class="form-control" th:field="*{direccion}" id="direccion" placeholder="Escriba la direccion del cliente" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" th:field="*{email}" id="email" placeholder="Escriba el email del cliente" required>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-primary">Guardar cambios</button> |
+        <a th:href="@{/clientes}">Regresar</a>
+    </form>
+</div>
