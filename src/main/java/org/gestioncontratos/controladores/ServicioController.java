@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 @Controller
-@RequestMapping("/servicio")
+@RequestMapping("/servicios")
 public class ServicioController {
     @Autowired
     private IServicioService servicioService;
@@ -30,7 +30,7 @@ public class ServicioController {
         Pageable pageable = PageRequest.of(currentPage, pageSize);
 
         Page<Servicio> servicios = servicioService.buscarTodosPaginados(pageable);
-        model.addAttribute("clientes", servicios);
+        model.addAttribute("servicios", servicios);
 
         int totalPages = servicios.getTotalPages();
         if (totalPages > 0) {

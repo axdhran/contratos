@@ -1,0 +1,30 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout">
+
+<div layout:fragment="content">
+    <h1>Detalles del servicio</h1>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class = "col-sm-2" >ID</dt>
+            <dd class = "col-sm-10" th:text="${servicio.id}"></dd>
+
+            <dt class = "col-sm-2">Nombre</dt>
+            <dd class = "col-sm-10" th:text="${servicio.nombre}"></dd>
+
+            <dt class = "col-sm-2">Descripcion</dt>
+            <dd class = "col-sm-10" th:text="${servicio.descripcion}"></dd>
+
+            <dt class = "col-sm-2">tiempo</dt>
+            <dd class = "col-sm-10" th:text="${servicio.tiempo}"></dd>
+
+            <dt class = "col-sm-2">Precio</dt>
+            <dd class = "col-sm-10" th:text="${servicio.precio}"></dd>
+        </dl>
+
+        <a th:href="@{/servicios/edit/{id} (id = ${servicio.id}) }" class="btn btn-outline-info">Editar</a> |
+        <a th:href="@{/servicios}">Regresar</a>
+    </div>
+</div>

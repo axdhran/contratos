@@ -4,7 +4,7 @@
       layout:decorate="/layouts/_mainLayout">
 
 <div layout:fragment="content">
-    <h1>Editar docente</h1>
+    <h1>Editar cliente</h1>
     <form th:action="@{/clientes/save}" th:object="${cliente}" method="post">
         <input type="hidden" th:field="*{id}">
         <div class="row">
