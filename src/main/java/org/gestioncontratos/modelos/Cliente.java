@@ -3,6 +3,8 @@ package org.gestioncontratos.modelos;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
+import java.util.List;
+
 @Entity
 @Table(name = "clientes")
 public class Cliente {
@@ -28,6 +30,17 @@ public class Cliente {
 
     @NotBlank (message = "El Nombre es necesario")
     private String correo;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Contrato> contratos;
+
+    public List<Contrato> getContratos() {
+        return contratos;
+    }
+
+    public void setContratos(List<Contrato> contratos) {
+        this.contratos = contratos;
+    }
 
     public Integer getId() {
         return id;

@@ -1,0 +1,37 @@
+
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout">
+
+<div layout:fragment="content">
+    <h1>Detalles del contrato</h1>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class = "col-sm-2" >ID</dt>
+            <dd class = "col-sm-10" th:text="${contrato.id}"></dd>
+
+            <dt class = "col-sm-2" >Nombre</dt>
+            <dd class = "col-sm-10" th:text="${contrato.nombre}"></dd>
+
+            <dt class = "col-sm-2">Cliente</dt>
+            <dd class = "col-sm-10" th:text="|${contrato.cliente.nombre} ${contrato.cliente.apellido}|"></dd>
+
+            <dt class = "col-sm-2">Servicio</dt>
+            <dd class = "col-sm-10" th:text="${contrato.servicio.nombre}"></dd>
+
+            <dt class = "col-sm-2">Tiempo</dt>
+            <dd class = "col-sm-10" th:text="${contrato.tiempo}"></dd>
+
+            <dt class = "col-sm-2">Fecha de Inicio</dt>
+            <dd class = "col-sm-10" th:text="${contrato.fechaInicio}"></dd>
+
+            <dt class = "col-sm-2">Fecha de Final</dt>
+            <dd class = "col-sm-10" th:text="${contrato.fechaFinal}"></dd>
+        </dl>
+
+        <a th:href="@{/contratos/edit/{id} (id = ${contrato.id}) }" class="btn btn-outline-info">Editar</a> |
+        <a th:href="@{/contratos}">Regresar</a>
+    </div>
+</div>

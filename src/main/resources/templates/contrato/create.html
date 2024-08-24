@@ -1,0 +1,70 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout">
+
+<div layout:fragment="content">
+    <h1>Crear nuevo contrato</h1>
+    <form th:action="@{/contratos/save}" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="cliente">Cliente:</label>
+                    <select id="cliente" name="clienteId" class="form-control" required>
+                        <option th:each="cliente : ${clientes}" th:value="${cliente.id}" th:text="|${cliente.nombre} ${cliente.apellido}|"></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="servicio">Servicio:</label>
+                    <select id="servicio" name="servicioId" class="form-control" required>
+                        <option th:each="servicio : ${servicios}" th:value="${servicio.id}" th:text="${servicio.nombre}"></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="tiempo">Tiempo</label>
+                    <input type="time" class="form-control" id="tiempo" name="tiempo" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="fechaInicio">Fecha de Inicio</label>
+                    <input type="datetime-local" class="form-control" id="fechaInicio" name="fechaInicio" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="fechaFinal">Fecha de Finalizacion</label>
+                    <input type="datetime-local" class="form-control" id="fechaFinal" name="fechaFinal" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Guardar</button> |
+                    <a href="/contratos">Regresar</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
