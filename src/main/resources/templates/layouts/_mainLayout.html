@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es"
-        xmlns:th="http://www.thymeleaf.org"
-        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,13 +10,13 @@
     <title>Gestion De Contratos</title>
     <link th:href="@{/css/styles.css}" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdeliver.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 <body>
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
-    <a class="navbar-brand ps-3" href="#">VERSA-BUSSINES</a>
+    <a class="navbar-brand ps-3" th:href="@{/}">VERSA-BUSSINES</a>
     <!-- Sidebar Toggle-->
     <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
     <!-- Navbar Search-->
@@ -45,18 +45,16 @@
             <div class="sb-sidenav-menu">
                 <div class="nav">
                     <div class="sb-sidenav-menu-heading">Mantenimientos</div>
-                    <a class="nav-link" th:href="@{/contratos}">
-                        <div class="sb-nav-link-icon"><i class="fa-solid fa-file-lines"></i></div>
+                    <a class="nav-link" href="#">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Contratos
                     </a>
-
                     <a class="nav-link" th:href="@{/clientes}">
-                        <div class="sb-nav-link-icon"><i class="fa-solid fa-user"></i></div>
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Clientes
                     </a>
-
                     <a class="nav-link" th:href="@{/servicios}">
-                        <div class="sb-nav-link-icon"><i class="fa-solid fa-bell-concierge"></i></i></div>
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Servicios
                     </a>
                 </div>
