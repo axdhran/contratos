@@ -11,7 +11,7 @@ public class Rol {
     private Integer id;
 
     @NotBlank(message = "El nombre del rol es requerido")
-    private  String nombre;
+    private String nombre;
 
     public Integer getId() {
         return id;
@@ -21,11 +21,11 @@ public class Rol {
         this.id = id;
     }
 
-    public @NotBlank(message = "El nombre del rol es requerido") String getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(@NotBlank(message = "El nombre del rol es requerido") String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 }

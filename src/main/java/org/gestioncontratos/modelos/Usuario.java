@@ -16,15 +16,15 @@ public class Usuario {
     @NotBlank(message = "El nombre de usuario es requerido")
     private String login;
 
-    @NotBlank(message = "La contraseña de usuario es requerida")
+    @NotBlank(message = "La contraseña es requerida")
     private String clave;
 
     private int status;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "usuario_rol",
-                    joinColumns = @JoinColumn(name = "usuario_id"),
-                    inverseJoinColumns = @JoinColumn(name = "rol_id"))
+            joinColumns = @JoinColumn(name = "usuario_id"),
+            inverseJoinColumns = @JoinColumn(name = "rol_id"))
     private List<Rol> roles;
 
     public Integer getId() {
@@ -35,19 +35,19 @@ public class Usuario {
         this.id = id;
     }
 
-    public @NotBlank(message = "El nombre de usuario es requerido") String getLogin() {
+    public String getLogin() {
         return login;
     }
 
-    public void setLogin(@NotBlank(message = "El nombre de usuario es requerido") String login) {
+    public void setLogin(String login) {
         this.login = login;
     }
 
-    public @NotBlank(message = "La contraseña de usuario es requerida") String getClave() {
+    public String getClave() {
         return clave;
     }
 
-    public void setClave(@NotBlank(message = "La contraseña de usuario es requerida") String clave) {
+    public void setClave(String clave) {
         this.clave = clave;
     }
 
