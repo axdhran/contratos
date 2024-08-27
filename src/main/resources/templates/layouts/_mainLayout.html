@@ -31,7 +31,6 @@
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#!">Settings</a></li>
                 <div sec:authorize="isAnonymous()">
                     <li><a class="dropdown-item" th:href="@{/login}">Login</a></li>
                 </div>
@@ -49,22 +48,27 @@
             <div class="sb-sidenav-menu">
                 <div class="nav">
                     <div class="sb-sidenav-menu-heading">Mantenimientos</div>
-                    <div sec:authorize="hasAnyAuthority('admin')">
-                        <a class="nav-link" th:href="@{/clientes}">
-                            <div class="sb-nav-link-icon"><i class="fa-solid fa-user"></i></div>
-                            Clientes
-                        </a>
-
-                        <a class="nav-link" th:href="@{/servicios}">
-                            <div class="sb-nav-link-icon"><i class="fa-solid fa-bell-concierge"></i></i></div>
-                            Servicios
-                        </a>
-                    </div>
                     <div sec:authorize="hasAnyAuthority('admin', 'empleado')">
                         <a class="nav-link" th:href="@{/contratos}">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-file-lines"></i></div>
                             Contratos
                         </a>
+                    </div>
+                    <div sec:authorize="hasAnyAuthority('admin')">
+                        <a class="nav-link" th:href="@{/clientes}">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
+                            Clientes
+                        </a>
+                        <a class="nav-link" th:href="@{/servicios}">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-bell-concierge"></i></i></div>
+                            Servicios
+                        </a>
+                        <div sec:authorize="hasAnyAuthority('admin', 'empleado')">
+                            <a class="nav-link" th:href="@{/usuarios}">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-users-gear"></i></i></div>
+                                Usuarios
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

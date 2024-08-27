@@ -43,8 +43,7 @@ public class DatabaseWebSecurity {
 
                 // todas las demás vistas requieren autenticación
                 .anyRequest().authenticated());
-        http.formLogin(form -> form.permitAll());
-        //http.formLogin(form -> form.loginPage("/login").permitAll());
+        http.formLogin(form -> form.loginPage("/login").permitAll());
 
         return http.build();
     }
