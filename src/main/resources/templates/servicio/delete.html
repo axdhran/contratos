@@ -26,7 +26,9 @@
         <form th:action="@{/servicios/delete}" method="post">
             <input type="hidden" name="Id" th:value="${servicio.id}">
             <input type="submit" value="Eliminar" class="btn btn-danger"> |
-            <a th:href="@{/servicios}">Regresar</a>
+            <a th:href="@{/servicios}">
+                <i class="fa-solid fa-trash"></i> Regresar
+            </a>
         </form>
 
     </div>

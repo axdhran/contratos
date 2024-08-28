@@ -31,7 +31,11 @@
             <dd class = "col-sm-10" th:text="${contrato.fechaFinal}"></dd>
         </dl>
 
-        <a th:href="@{/contratos/edit/{id} (id = ${contrato.id}) }" class="btn btn-outline-info">Editar</a> |
-        <a th:href="@{/contratos}">Regresar</a>
+        <a th:href="@{/contratos/edit/{id} (id = ${contrato.id}) }" class="btn btn-outline-info">
+            <i class="fa-solid fa-pen-to-square"></i> Editar
+        </a> |
+        <a href="/contratos">
+            <i class="fa-solid fa-tent-arrow-turn-left"></i> Regresar
+        </a>
     </div>
 </div>

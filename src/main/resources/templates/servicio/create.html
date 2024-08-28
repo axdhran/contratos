@@ -34,12 +34,19 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="precio">Precio</label>
-                    <input type="text" class="form-control" th:field="*{precio}" id="precio" placeholder="Escriba el precio del servicio" required>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input type="number" class="form-control" th:field="*{precio}" id="precio" placeholder="Escriba el precio del servicio" required min="0" max="1000" step="0.01">
+                    </div>
                 </div>
             </div>
         </div>
         <hr>
-        <button type="submit" class="btn btn-primary">Guardar</button> |
-        <a th:href="@{/servicios}">Regresar</a>
+        <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-floppy-disk"></i> Guardar
+        </button> |
+        <a th:href="@{/servicios}">
+            <i class="fa-solid fa-tent-arrow-turn-left"></i> Regresar
+        </a>
     </form>
 </div>

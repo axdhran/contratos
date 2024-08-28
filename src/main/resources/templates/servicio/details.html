@@ -24,7 +24,11 @@
             <dd class = "col-sm-10" th:text="${servicio.precio}"></dd>
         </dl>
 
-        <a th:href="@{/servicios/edit/{id} (id = ${servicio.id}) }" class="btn btn-outline-info">Editar</a> |
-        <a th:href="@{/servicios}">Regresar</a>
+        <a th:href="@{/servicios/edit/{id} (id = ${servicio.id}) }" class="btn btn-outline-info">
+            <i class="fa-solid fa-pen-to-square"></i> Editar
+        </a> |
+        <a th:href="@{/servicios}">
+            <i class="fa-solid fa-tent-arrow-turn-left"></i> Regresar
+        </a>
     </div>
 </div>

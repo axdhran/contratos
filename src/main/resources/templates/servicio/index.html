@@ -27,7 +27,9 @@
     </div>
 
     <h1>Listado de Servicios</h1>
-    <a th:href="@{/servicios/create}" class="btn btn-outline-primary">Nuevo servicio</a>
+    <a th:href="@{/servicios/create}" class="btn btn-outline-primary">
+        <i class="fa-solid fa-plus"></i> Nuevo servicio
+    </a>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -46,9 +48,15 @@
             <td th:text="${item.tiempo}"></td>
             <td th:text="${item.precio}"></td>
             <td>
-                <a th:href="@{/servicios/details/{id} (id = ${item.id}) }" class="btn btn-outline-secondary">Detalles</a> |
-                <a th:href="@{/servicios/edit/{id} (id = ${item.id}) }" class="btn btn-outline-info">Editar</a> |
-                <a th:href="@{/servicios/remove/{id} (id = ${item.id}) }" class="btn btn-outline-danger">Eliminar</a>
+                <a th:href="@{/servicios/details/{id} (id = ${item.id}) }" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-circle-info"></i> Detalles
+                </a> |
+                <a th:href="@{/servicios/edit/{id} (id = ${item.id}) }" class="btn btn-outline-info">
+                    <i class="fa-solid fa-pen-to-square"></i> Editar
+                </a> |
+                <a th:href="@{/servicios/remove/{id} (id = ${item.id}) }" class="btn btn-outline-danger">
+                    <i class="fa-solid fa-trash"></i> Eliminar
+                </a>
             </td>
         </tr>
         </tbody>

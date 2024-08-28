@@ -30,7 +30,11 @@
             <dd class = "col-sm-10" th:text="${cliente.correo}"></dd>
         </dl>
 
-        <a th:href="@{/clientes/edit/{id} (id = ${cliente.id}) }" class="btn btn-outline-info">Editar</a> |
-        <a th:href="@{/clientes}">Regresar</a>
+        <a th:href="@{/clientes/edit/{id} (id = ${cliente.id}) }" class="btn btn-outline-info">
+            <i class="fa-solid fa-pen-to-square"></i> Editar
+        </a> |
+        <a th:href="@{/clientes}">
+            <i class="fa-solid fa-tent-arrow-turn-left"></i> Regresar
+        </a>
     </div>
 </div>

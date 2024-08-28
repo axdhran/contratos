@@ -28,7 +28,9 @@
     </div>
 
     <h1>Listado de Usuarios</h1>
-    <a th:href="@{/usuarios/create}" class="btn btn-outline-primary">Nuevo usuario</a>
+    <a th:href="@{/usuarios/create}" class="btn btn-outline-primary">
+        <i class="fa-solid fa-plus"></i> Nuevo usuario
+    </a>
 
     <table class="table table-striped">
         <thead>
@@ -44,9 +46,13 @@
             <td th:text="${item.id}"></td>
             <td th:text="${item.login}"></td>
             <td th:text="${item.status == 1} ? 'ACTIVO' : 'INACTIVO'"></td>
-            <td>
-                <a th:href="@{/usuarios/details/{id} (id = ${item.id}) }" class="btn btn-outline-secondary">Detalles</a> |
-                <a th:href="@{/usuarios/remove/{id} (id = ${item.id}) }" class="btn btn-outline-danger">Eliminar</a>
+            <td> <!--buttons-->
+                <a th:href="@{/usuarios/details/{id} (id = ${item.id}) }" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-circle-info"></i> Detalles
+                </a> |
+                <a th:href="@{/usuarios/remove/{id} (id = ${item.id}) }" class="btn btn-outline-danger">
+                    <i class="fa-solid fa-trash"></i> Eliminar
+                </a>
             </td>
         </tr>
         </tbody>
