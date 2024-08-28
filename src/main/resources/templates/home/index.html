@@ -5,8 +5,11 @@
 
 <div layout:fragment="content">
 
-   </hr>
-   <h1 class="text-center">Bienvenidos!</h1>
+   <h1 class="text-center" style="margin-top: 190px">¡Bienvenido/a!</h1>
+
+   <div sec:authorize="isAuthenticated()" >
+      <h3 class="text-center" sec:authentication="name"></h3>
+   </div>
 
    <div sec:authorize="isAnonymous()" class="alert alert-danger text-center" role="alert">
       Debes iniciar sesión para poder utilizar la aplicación.
